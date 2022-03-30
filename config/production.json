@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://Insnapsys:Insnapsys@clusterzero.rqblx.mongodb.net/ProjectZero?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "632a84d8a4be3daab1a4",
+  "githubSecret": "c2ceb5bd29460d227437cdf482a055c7af198850"
+}

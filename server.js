@@ -1,8 +1,7 @@
 const express = require('express');
-const { body } = require('express-validator');
-//const res = require('express/lib/response');
-
 const connectDB = require('./config/db.js');
+const { body } = require('express-validator');
+const path = require('path');
 
 const app = express();
 
@@ -18,7 +17,16 @@ app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/posts', require('./routes/api/posts'));
 
-app.get('/', (req, res) => res.send('API Running'));
+//serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  //set a static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (res, req) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

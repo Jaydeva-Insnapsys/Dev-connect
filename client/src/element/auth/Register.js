@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setAlert } from '../../action/alert.js';
+import { setAlert } from '../../actions/alert.js';
 import { PropTypes } from 'prop-types';
 
 const Register = ({ setAlert }) => {

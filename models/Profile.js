@@ -1,4 +1,3 @@
-const { booleanParser } = require('config/parser');
 const mongoose = require('mongoose');
 
 const ProfileSchema = new mongoose.Schema({
@@ -6,10 +5,10 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user'
   },
-  website: {
+  company: {
     type: String
   },
-  company: {
+  website: {
     type: String
   },
   location: {
@@ -111,4 +110,4 @@ const ProfileSchema = new mongoose.Schema({
   }
 });
 
-module.exports = Profile = mongoose.model('profile', ProfileSchema);
+module.exports = mongoose.model('profile', ProfileSchema);

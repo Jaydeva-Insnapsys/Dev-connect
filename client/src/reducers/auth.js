@@ -36,7 +36,6 @@ function authReducer(state = initialState, action) {
         loading: false
       };
     case ACCOUNT_DELETED:
-    case AUTH_ERROR:
     case REGISTER_FAIL:
       localStorage.removeItem('token');
       return {
@@ -46,6 +45,7 @@ function authReducer(state = initialState, action) {
         loading: false
       };
     case LOGIN_FAIL:
+    case AUTH_ERROR:
     case LOGOUT:
       return {
         ...state,
